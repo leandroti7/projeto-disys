@@ -1,1 +1,42 @@
+form {
+  //   background: #000;
+  width: 100%;
+  padding-right: 5%;
+  padding-left: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 
+  .header-form {
+    display: flex;
+    width: 75%;
+    align-items: center;
+
+    figure {
+      margin: 0;
+      margin-right: 10px;
+      width: 70%;
+
+      img {
+        width: 100%;
+        object-fit: cover;
+        position: relative;
+      }
+    }
+
+    p {
+      text-transform: uppercase;
+      font-family: var(--font-patterns);
+      font-size: 1.5rem;
+      line-height: 2rem;
+      text-align: center;
+      margin: 0;
+      color: var(--gray-dark);
+
+    }
+  }
+}

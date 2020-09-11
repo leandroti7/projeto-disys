@@ -1,1 +1,18 @@
 @import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+:root {
+  //fonts
+  --font-patterns: 'Lato', serif;
+
+  //colors
+  --gray-light: #525257;
+  --gray-dark: #39393D;
+  --green-light: #00B1A8;
+  --font-color: #B4B4B9;
+}

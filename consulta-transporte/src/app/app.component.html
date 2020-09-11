@@ -1,1 +1,11 @@
 <app-nav-bar></app-nav-bar>
+<div class="container">
+  <app-form></app-form>
+  <div class="buttons">
+    <app-buttons id_btn="onibus" title="Ônibus" (showOnibus)="openedOnibus($event)"></app-buttons>
+    <app-buttons id_btn="lotacao" title="Lotação" (showLotacao)="openedLotacao($event)"></app-buttons>
+  </div>
+  <app-content-lotacao *ngIf="showLotacao"></app-content-lotacao>
+  <app-content-onibus *ngIf="showOnibus"></app-content-onibus>
+</div>
+<app-footer></app-footer>

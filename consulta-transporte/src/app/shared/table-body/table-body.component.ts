@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-table-body',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./table-body.component.scss'],
 })
 export class tableBodyComponent implements OnInit {
+  @Input() list = [];
   constructor() {}
 
   ngOnInit() {}
