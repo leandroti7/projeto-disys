@@ -1,5 +1,9 @@
 <h2>Linhas de Ônibus</h2>
 <form action="#" class="form-table">
-  <input type="search" name="pesquisa-nome" id="pesquisaNome" placeholder="Pesquise pelo nome">
+  <input type="search" name="pesquisa-nome" id="pesquisaNome" (keyup)='filtrar($event.target.value)'
+    placeholder="Pesquise pelo nome">
 </form>
-<app-table-body [list]="listOnibus"></app-table-body>
+<div class="content-body">
+  <!-- <app-table-auto></app-table-auto> -->
+  <app-table-body [list]="listOnibus"></app-table-body>
+</div>

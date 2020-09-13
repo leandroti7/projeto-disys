@@ -9,20 +9,35 @@ import { TransportesService } from 'src/app/transportes.service';
 export class ContentLotacaoComponent implements OnInit {
   listLotacao;
 
-  constructor(private traansportesSrevice: TransportesService) {}
+  constructor(private transportesSrevice: TransportesService) {}
 
   ngOnInit(): void {
-    this.listarLotacao();
+    this.listarLotacao(null);
   }
 
-  listarLotacao() {
-    this.traansportesSrevice.listarLotacao().subscribe(
-      (lotacao) => {
-        this.listLotacao = lotacao;
-      },
-      (err) => {
-        console.log('Erro ao listar as lotacoes', err);
-      }
-    );
+  listarLotacao(busca: object) {
+    if (!busca) {
+      this.transportesSrevice.listarLotacao().subscribe(
+        (onibus) => {
+          this.listLotacao = onibus;
+        },
+        (err) => {
+          console.log('Erro ao listar os alunos', err);
+        }
+      );
+    } else {
+      this.listLotacao = busca;
+    }
+  }
+  filtrar(value: string) {
+    let busca = [];
+    if (!value || value === ' ') {
+      this.listarLotacao(null);
+    } else {
+      busca = this.listLotacao.filter((item) =>
+        item.nome.trim().toLowerCase().includes(value.trim().toLowerCase())
+      );
+    }
+    this.listarLotacao(busca);
   }
 }

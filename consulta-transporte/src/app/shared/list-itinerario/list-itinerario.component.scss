@@ -4,7 +4,6 @@ table {
   thead {
     th {
       text-align: center;
-      max-width: 220px;
     }
   }
 
@@ -15,8 +14,7 @@ table {
       font-size: 0.8rem;
 
       td {
-        // text-align: center;
-        max-width: 220px;
+        text-align: center;
 
         a {
           width: 35px;

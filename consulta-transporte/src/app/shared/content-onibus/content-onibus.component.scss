@@ -20,5 +20,15 @@ form {
       text-align: center;
       color: var(--font-color);
     }
+
+    &::-webkit-search-cancel-button {
+      display: none;
+    }
   }
+}
+
+.content-body {
+  padding: 10% 0;
+  max-height: 400px;
+  overflow: scroll;
 }

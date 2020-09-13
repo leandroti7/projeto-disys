@@ -18,4 +18,9 @@ export class TransportesService {
       'http://www.poatransporte.com.br/php/facades/process.php?a=nc&p=%25&t=l'
     );
   }
+  listarItinerario() {
+    return this.http.get(
+      'http://www.poatransporte.com.br/php/facades/process.php?a=il&p=30'
+    );
+  }
 }

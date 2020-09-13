@@ -11,17 +11,32 @@ export class ContentOnibusComponent implements OnInit {
   constructor(private transportesService: TransportesService) {}
 
   ngOnInit(): void {
-    this.listarOnibus();
+    this.listarOnibus(null);
   }
 
-  listarOnibus() {
-    this.transportesService.listarOnibus().subscribe(
-      (onibus) => {
-        this.listOnibus = onibus;
-      },
-      (err) => {
-        console.log('Erro ao listar os alunos', err);
-      }
-    );
+  listarOnibus(busca: object) {
+    if (!busca) {
+      this.transportesService.listarOnibus().subscribe(
+        (onibus) => {
+          this.listOnibus = onibus;
+        },
+        (err) => {
+          console.log('Erro ao listar os alunos', err);
+        }
+      );
+    } else {
+      this.listOnibus = busca;
+    }
+  }
+  filtrar(value: string) {
+    let busca = [];
+    if (!value || value === ' ') {
+      this.listarOnibus(null);
+    } else {
+      busca = this.listOnibus.filter((item) =>
+        item.nome.trim().toLowerCase().includes(value.trim().toLowerCase())
+      );
+    }
+    this.listarOnibus(busca);
   }
 }

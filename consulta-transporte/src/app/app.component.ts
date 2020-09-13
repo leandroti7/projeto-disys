@@ -10,13 +10,21 @@ export class AppComponent {
 
   showOnibus: boolean = false;
   showLotacao: boolean = false;
+  showItinerario: boolean = false;
 
   openedOnibus(state: boolean) {
     this.showOnibus = state;
     this.showLotacao = false;
+    this.showItinerario = false;
   }
   openedLotacao(state: boolean) {
     this.showLotacao = state;
     this.showOnibus = false;
+    this.showItinerario = false;
+  }
+  openedItinerario(state: boolean) {
+    this.showItinerario = state;
+    this.showOnibus = false;
+    this.showLotacao = false;
   }
 }

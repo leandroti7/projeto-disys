@@ -13,6 +13,13 @@ import { ContentLotacaoComponent } from './shared/content-lotacao/content-lotaca
 import { FooterComponent } from './shared/footer/footer.component';
 
 import { TransportesService } from './transportes.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TableAutoComponent } from './shared/table-auto/table-auto.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { ContentItinerarioComponent } from './shared/content-itinerario/content-itinerario.component';
+import { ListItinerarioComponent } from './shared/list-itinerario/list-itinerario.component';
 
 @NgModule({
   declarations: [
@@ -24,8 +31,11 @@ import { TransportesService } from './transportes.service';
     ContentOnibusComponent,
     ContentLotacaoComponent,
     FooterComponent,
+    TableAutoComponent,
+    ContentItinerarioComponent,
+    ListItinerarioComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, BrowserAnimationsModule, MatTableModule, MatPaginatorModule, MatSortModule],
   providers: [TransportesService, HttpClientModule],
   bootstrap: [AppComponent],
 })

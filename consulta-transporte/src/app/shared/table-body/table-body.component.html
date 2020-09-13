@@ -1,18 +1,16 @@
 <table class="table table-striped table-responsive">
   <thead>
     <tr>
-      <th scope="col">Numero</th>
       <th scope="col">Nome</th>
       <th scope="col">Código</th>
       <th scope="col">Itinerário</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let onibus of list">
-      <td>{{onibus.id}}</td>
-      <td>{{onibus.nome}}</td>
-      <td>{{onibus.codigo}}</td>
-      <td> <a href="#">Ver</a> </td>
+    <tr *ngFor="let item of list">
+      <td width="220">{{item.nome}}</td>
+      <td>{{item.codigo}}</td>
+      <td> <a href="#" id="{{item.id}}" (click)="mostrar($event)">Ver</a> </td>
     </tr>
   </tbody>
 </table>
