@@ -14,12 +14,28 @@ export class ContentItinerarioComponent implements OnInit {
   ngOnInit(): void {
     this.listarItinerario();
   }
+  objToArray(obj) {
+    let result = [];
+    let newArr = [];
+    for (let key of Object.keys(obj)) {
+      result.push([obj[key]]);
+    }
+    for (let i = 0; i < result.length; i++) {
+      const el = result[i];
+      for (let c = 0; c < el.length; c++) {
+        let element = el[c];
+        newArr.push(element);
+      }
+    }
+    return newArr;
+  }
 
   listarItinerario() {
+    let change;
     this.traansportesSrevice.listarItinerario().subscribe(
       (lotacao) => {
-        this.listItinerario = lotacao;
-        console.log(this.listItinerario);
+        change = lotacao;
+        this.listItinerario = this.objToArray(change);
       },
       (err) => {
         console.log('Erro ao listar as lotacoes', err);
