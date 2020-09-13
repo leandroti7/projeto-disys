@@ -38,3 +38,30 @@ form {
   max-height: 400px;
   overflow: scroll;
 }
+
+@media screen and (min-width: 768px) {
+
+  h2,
+  form,
+  h3 {
+    width: 45%;
+    margin: 2% auto;
+  }
+
+  h2 {
+    width: 80%;
+  }
+
+  h3 {
+    border-top: none;
+    border-bottom: none;
+    padding: 2% 5%;
+  }
+
+  .content-body {
+    padding: 20px 0;
+    overflow: auto;
+    width: 50%;
+    margin: 50px auto;
+  }
+}

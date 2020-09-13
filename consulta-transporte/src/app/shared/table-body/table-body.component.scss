@@ -29,7 +29,42 @@ table {
         }
       }
     }
+  }
 
+  @media screen and (min-width: 768px) {
+    overflow: hidden;
+    display: table;
+    margin: 0 auto;
 
+    thead {
+      th {
+        max-width: 100%;
+      }
+    }
+
+    tbody {
+      tr {
+        max-width: 100%;
+
+        td {
+          text-align: center;
+          vertical-align: inherit;
+
+          a {
+            height: 50px;
+            width: 50px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            text-decoration: none;
+            transition: background-color .3s ease-in-out;
+
+            &:hover {
+              background-color: var(--green-light-hover);
+            }
+          }
+        }
+      }
+    }
   }
 }

@@ -8,7 +8,7 @@
   </thead>
   <tbody>
     <tr *ngFor="let item of list">
-      <td width="220">{{item.nome}}</td>
+      <td>{{item.nome}}</td>
       <td>{{item.codigo}}</td>
       <td> <a href="#" id="{{item.id}}" (click)="mostrar($event)">Ver</a> </td>
     </tr>

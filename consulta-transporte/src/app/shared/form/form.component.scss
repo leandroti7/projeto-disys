@@ -39,4 +39,24 @@ form {
 
     }
   }
+
+  @media screen and (min-width: 768px) {
+    margin-top: 5%;
+
+    .header-form {
+      width: 50%;
+      margin: 0 auto;
+
+      p {
+        font-size: 2rem;
+        line-height: 4rem;
+        width: 70%;
+      }
+
+      figure {
+        width: 30%;
+      }
+    }
+
+  }
 }

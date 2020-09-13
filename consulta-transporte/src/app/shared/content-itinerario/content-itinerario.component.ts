@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { TransportesService } from 'src/app/transportes.service';
 
 @Component({
@@ -8,11 +8,17 @@ import { TransportesService } from 'src/app/transportes.service';
 })
 export class ContentItinerarioComponent implements OnInit {
   listItinerario;
+  id;
 
   constructor(private traansportesSrevice: TransportesService) {}
+  getId() {
+    let idLocalhistorage = window.localStorage.getItem('id');
+    this.id = parseInt(idLocalhistorage);
+  }
 
   ngOnInit(): void {
-    this.listarItinerario();
+    this.getId();
+    this.listarItinerario(this.id);
   }
   objToArray(obj) {
     let result = [];
@@ -30,9 +36,9 @@ export class ContentItinerarioComponent implements OnInit {
     return newArr;
   }
 
-  listarItinerario() {
+  listarItinerario(id) {
     let change;
-    this.traansportesSrevice.listarItinerario().subscribe(
+    this.traansportesSrevice.listarItinerario(id).subscribe(
       (lotacao) => {
         change = lotacao;
         this.listItinerario = this.objToArray(change);

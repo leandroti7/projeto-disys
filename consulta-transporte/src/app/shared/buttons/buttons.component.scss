@@ -11,4 +11,11 @@ a {
   font-size: 1.2rem;
   text-transform: uppercase;
   color: var(--green-light);
+  transition: background-color .3s ease-in-out;
+
+  &:hover {
+    background-color: var(--green-light-hover);
+    color: #fff;
+    border: 1px solid var(--green-light-hover);
+  }
 }

@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 
 import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -19,9 +18,9 @@ export class TransportesService {
       'http://www.poatransporte.com.br/php/facades/process.php?a=nc&p=%25&t=l'
     );
   }
-  listarItinerario() {
+  listarItinerario(id) {
     return this.http.get(
-      'http://www.poatransporte.com.br/php/facades/process.php?a=il&p=30'
+      'http://www.poatransporte.com.br/php/facades/process.php?a=il&p=' + id
     );
   }
 }

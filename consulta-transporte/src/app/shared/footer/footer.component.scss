@@ -1,10 +1,18 @@
 footer {
   position: absolute;
-  // bottom: 0%;
   background-color: var(--gray-light);
   color: var(--font-color);
 
   a {
     color: var(--green-light);
+  }
+
+  @media screen and (min-width: 768px) {
+    position: relative;
+
+    figure,
+    h5 {
+      text-align: center;
+    }
   }
 }
